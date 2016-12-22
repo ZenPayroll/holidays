@@ -7,14 +7,17 @@ class UsDefinitionTests < Test::Unit::TestCase  # :nodoc:
   def test_gusto
     {
      Date.civil(2008,1,1) => 'New Year\'s Day',
+     Date.civil(2017,1,2) => nil,
      Date.civil(2008,5,26) => 'Memorial Day',
      Date.civil(2008,7,4) => 'Independence Day',
      Date.civil(2008,9,1) => 'Labor Day',
      Date.civil(2008,11,27) => 'Thanksgiving',
      Date.civil(2008,11,28) => 'Day After Thanksgiving',
-     Date.civil(2008,12,25) => 'Christmas Day'
+     Date.civil(2008,12,25) => 'Christmas Day',
+     Date.civil(2010,12,24) => nil,
+     Date.civil(2016,12,26) => nil
     }.each do |date, name|
-      assert_equal name, (Holidays.on(date, :gusto)[0] || {})[:name]
+      assert_equal name, (Holidays.on(date, :gusto, :observed)[0] || {})[:name]
     end
   end
 end
