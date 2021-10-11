@@ -1,5 +1,8 @@
-= Ruby Holidays Gem
-  
+= Ruby Holidays Gem (do not use)
+
+= This is an outdated fork that is not maintained. Please do not use this.
+
+
 A set of functions to deal with holidays in Ruby.
  
 Extends Ruby's built-in Date class and supports custom holiday definition lists.
